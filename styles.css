@@ -1,11 +1,11 @@
 body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Segoe UI', sans-serif;
-      background: #fdfcfa;
-  }
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    background: #fdfcfa;
+}
 
 #heartCanvas {
     position: fixed;
@@ -44,7 +44,7 @@ body, html {
     display: block;
 }
 
-#nextBtn {
+#nextBtn, #startBtn {
     margin-top: 1.5rem;
     padding: 0.6rem 1.2rem;
     font-size: 1rem;
@@ -56,6 +56,67 @@ body, html {
     transition: background 0.3s;
 }
 
-#nextBtn:hover {
+#nextBtn:hover, #startBtn:hover {
     background: #ff4f89;
+}
+
+.chat-bubble {
+    max-width: 80%;
+    padding: 1rem;
+    margin: 0.5rem auto;
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #fff;
+}
+
+.chat-bubble.received {
+    align-self: flex-start;
+    background: rgba(253, 44, 108, 0.7); /* light pink tint */
+    text-align: left;
+    margin-left: 0;
+    border-top-left-radius: 0;
+}
+
+.chat-bubble.sent {
+    align-self: flex-end;
+    background: rgba(255, 45, 17, 0.7); /* hot pink tint */
+    text-align: right;
+    margin-right: 0;
+    border-top-right-radius: 0;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.floating-footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-top-left-radius: 16px;
+    padding: 0.75rem 1.2rem;
+    font-size: 0.9rem;
+    box-shadow: -4px -4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
 }

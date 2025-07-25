@@ -65,7 +65,19 @@ animate();
 // Step logic
 const steps = document.querySelectorAll(".step");
 const nextBtn = document.getElementById("nextBtn");
+const startBtn = document.getElementById("startBtn");
+const stepsContainer = document.getElementById("steps");
+const intro = document.getElementById("intro");
+const bgMusic = document.getElementById("bgMusic");
+
 let currentStep = 0;
+
+startBtn.addEventListener("click", () => {
+  bgMusic.play().catch(() => {});
+  intro.style.display = "none";
+  stepsContainer.style.display = "block";
+  nextBtn.style.display = "inline-block";
+});
 
 nextBtn.addEventListener("click", () => {
   if (currentStep < steps.length - 1) {
